@@ -1,4 +1,6 @@
-class PendingTask {
+import 'package:flutter/material.dart';
+
+class PendingTask extends StatelessWidget {
   int _id;
   String _name;
   String _created;
@@ -29,8 +31,32 @@ class PendingTask {
   }
 
   PendingTask.fromMap(Map<String, dynamic> map) {
-    this._id = map ["id"];
+    this._id = map["id"];
     this._name = map["name"];
     this._created = map["created"];
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            _name,
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 17),
+          ),
+          Container(
+              margin: EdgeInsets.only(top: 5),
+              child: Text("Created on $_created",
+                  style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                      fontStyle: FontStyle.italic)))
+        ],
+      ),
+    );
   }
 }
