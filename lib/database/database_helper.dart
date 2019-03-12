@@ -6,7 +6,7 @@ import 'package:pending_task_app/model/pending_task.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DatabaseHelper {
-  static final DatabaseHelper _instance = new DatabaseHelper.getInstance();
+  static final DatabaseHelper _instance = DatabaseHelper.getInstance();
   static Database _db;
 
   final String tableName = "pendingTask";
